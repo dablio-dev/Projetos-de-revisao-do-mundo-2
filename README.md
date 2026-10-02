@@ -1,2 +1,2 @@
-# Projetos de revisao do mundo 2
-Este repositório reúne os exercícios, desafios e projetos práticos desenvolvidos durante o Mundo 2 e na transição para o Mundo 3 do curso de Python do Curso em Vídeo, ministrado pelo professor Gustavo Guanabara.  O objetivo principal é consolidar o domínio sobre estruturas de controle e condicionais antes de avançar para a manipulação de dados compostos e modularização.
+# Projetos de revisão do mundo 2
+Este repositório reúne os exercícios, desafios e projetos práticos desenvolvidos durante o Mundo 2 e na transição para o Mundo 3 do curso de Python do Curso em Vídeo, ministrado pelo professor Gustavo Guanabara. O objetivo principal é consolidar o domínio sobre estruturas de controle e condicionais antes de avançar para a manipulação de dados compostos e modularização.
