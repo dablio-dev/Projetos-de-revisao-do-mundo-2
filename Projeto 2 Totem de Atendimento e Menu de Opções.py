@@ -17,17 +17,22 @@ while True:
             continue
 
     except ValueError:
+        print(msg_error)
         continue
     if escolha_acao == 1:
         while True:
             idade_cliente = str(input('Idade do cliente: '))
             try:
                 idade_cliente = int(idade_cliente)
-                contador_idade += 1
-                if contador_idade == 1 or idade_cliente < menor_idade:
-                    menor_idade = idade_cliente
-                break
+                if idade_cliente < 1 or idade_cliente > 130:
+                    print(msg_error)
+                else:
+                    contador_idade += 1
+                    if contador_idade == 1 or idade_cliente < menor_idade:
+                        menor_idade = idade_cliente
+                    break
             except ValueError:
+                print(msg_error)
                 continue
         while True:
             print('''[1] Reparo
@@ -66,14 +71,24 @@ while True:
                             print(msg_error)
                             continue
             else:
+                print(msg_error)
                 continue
             break
         if max_reparo > max_limpeza and max_reparo > max_acessorio:
             mais_procurado = 'Reparo'
         elif max_limpeza > max_reparo and max_limpeza > max_acessorio:
             mais_procurado = 'Limpeza'
-        else:
+        elif max_acessorio > max_reparo and max_acessorio > max_limpeza:
             mais_procurado = 'Acessório'
+        else:
+            if max_reparo == max_limpeza == max_acessorio:
+                mais_procurado = 'Demanda iguais para todos os serviços'
+            elif max_acessorio == max_reparo:
+                mais_procurado = 'Acessórios e reparos'
+            elif max_acessorio == max_limpeza:
+                mais_procurado = 'Acessórios e limpeza'
+            else:
+                mais_procurado = 'Reparos e limpeza'
     elif escolha_acao == 2:
         if max_acessorio <= 0 and max_limpeza <= 0 and max_reparo <= 0:
             print('Nenhuma ordem de serviço registrada, por favor digite ( 1 ) e registre uma agora ...')
