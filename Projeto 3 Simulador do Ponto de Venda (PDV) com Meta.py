@@ -57,8 +57,8 @@ if total_vendas >= 1:
     print('-' * 50)
 
     print(f'''Total de vendas: {total_vendas}
-    Faturamento liquido: R$ {faturamento_liquido:.2f}
-    Porcentagem da meta atingida: {porcentagem_meta:.1f}%
-    Vendas com desconto: {total_vendas_desc} | Vendas com juros: {total_vendas_juros}''')
+Faturamento liquido: R$ {faturamento_liquido:.2f}
+Porcentagem da meta atingida: {porcentagem_meta:.1f}%
+Vendas com desconto: {total_vendas_desc} | Vendas com juros: {total_vendas_juros}''')
 else:
     print('Nenhuma venda foi efetuada...')
