@@ -58,7 +58,7 @@ if total_vendas >= 1:
     try:
         porcentagem_meta = faturamento_liquido / meta_faturamento * 100
         porcentagem_meta_format = f'{porcentagem_meta:.1f}%'
-    except:
+    except ZeroDivisionError:
         porcentagem_meta_format = 'Meta foi definida em (0)'
     print('-' * 50)
     print('FECHAMENTO DE CAIXA'.center(50, ' '))
