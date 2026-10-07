@@ -1,5 +1,6 @@
 total_vendas_desc = faturamento_liquido = total_vendas_juros = total_preco_normal = total_vendas = meta_faturamento = 0
 valor_venda = forma_pagamento= 0
+
 while True:
     try:
         meta_faturamento = float(input('Meta de faturamento: R$ '))
@@ -7,6 +8,8 @@ while True:
     except ValueError:
         print('Digite um valor valido...')
         continue
+
+ja_exibida = False
 while True:
     print('-' * 50)
     while True:
@@ -18,6 +21,7 @@ while True:
             continue
     if valor_venda == 0:
         break
+
     while True:
         try:
             print(' FORMA DE PAGAMENTO '.center(50, '-'))
@@ -38,14 +42,21 @@ while True:
         total_vendas_juros += 1
         faturamento_liquido += valor_venda
     else:
-        print('contando os preço normal')
         total_preco_normal += 1
         sem_acrescimo = valor_venda
         faturamento_liquido += valor_venda
-    print('-' * 50)
-    if faturamento_liquido >= meta_faturamento:
+    if faturamento_liquido >= meta_faturamento and ja_exibida == False:
+        print('-' * 50)
+        ja_exibida = True
         print(f'\033[1;32mMETA DE R${meta_faturamento:.2f} ATINGIDA\033[m')
 
-print('-' * 50)
-print(' FECHAMENTO DE CAIXA '.center(50, '-'))
+porcentagem_meta = faturamento_liquido / meta_faturamento * 100
 
+print('-' * 50)
+print('FECHAMENTO DE CAIXA'.center(50, ' '))
+print('-' * 50)
+
+print(f'''Total de vendas: {total_vendas}
+Faturamento liquido: R$ {faturamento_liquido:.2f}
+Porcentagem da meta atingida: {porcentagem_meta:.1f}%
+Vendas com desconto: {total_vendas_desc} | Vendas com juros: {total_vendas_juros}''')
