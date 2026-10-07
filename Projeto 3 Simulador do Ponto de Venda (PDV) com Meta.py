@@ -55,14 +55,18 @@ while True:
         print(f'\033[1;32mMETA DE R${meta_faturamento:.2f} ATINGIDA\033[m')
 
 if total_vendas >= 1:
-    porcentagem_meta = faturamento_liquido / meta_faturamento * 100
+    try:
+        porcentagem_meta = faturamento_liquido / meta_faturamento * 100
+        porcentagem_meta_format = f'{porcentagem_meta:.1f}%'
+    except:
+        porcentagem_meta_format = 'Meta foi definida em (0)'
     print('-' * 50)
     print('FECHAMENTO DE CAIXA'.center(50, ' '))
     print('-' * 50)
 
     print(f'''Total de vendas: {total_vendas}
 Faturamento liquido: R$ {faturamento_liquido:.2f}
-Porcentagem da meta atingida: {porcentagem_meta:.1f}%
+Porcentagem da meta atingida: {porcentagem_meta_format}
 Vendas com desconto: {total_vendas_desc} | Vendas com juros: {total_vendas_juros}''')
 else:
     print('Nenhuma venda foi efetuada...')
