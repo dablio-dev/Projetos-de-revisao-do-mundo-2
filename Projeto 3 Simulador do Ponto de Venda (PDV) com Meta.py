@@ -28,9 +28,13 @@ while True:
             forma_pagamento = int(input('[1] Dinheiro / Pix (-10%) | [2] Debito (Preço normal)'
                                         '\n[3] Credito até 2x (Preço normal) | [4] Credito  3x ou mais (+20 juros)'
                                         '\nSua escolha: '))
+            if forma_pagamento > 4 or forma_pagamento < 1:
+                print('Digite um valor valido...')
+                continue
             total_vendas += 1
             break
         except ValueError:
+            print('Digite um valor valido...')
             continue
 
     if forma_pagamento == 1:
